@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>new-era-interiors-react</title>
+  <!-- Fonts: -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/service.css">
+  <link rel="stylesheet" href="css/journey.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- Font Awesome kit -->
+  <script src="https://kit.fontawesome.com/3a523928fc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header id="site-header">
+    <div class="header-inner">
+
+      <div class="header-left">
+        <div class="header-logo-box">
+          <span>NE</span>
+        </div>
+        <span class="header-brand">New Era Interiors</span>
+      </div>
+
+      <!-- Font Awesome bars button -->
+      <button class="header-menu-btn" type="button" aria-label="Open Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="hero">
+    <section class="intro">
+      <h1>NEW ERA<br> INTERIORS</h1>
+      <h4 id="her0-sub-title">Modern Interior Solutions Designed <br>for Inspired Living</h4>
+      <div id="banner">
+
+        <h3 id="banner-head">Presented by</h3>
+        <h4 id="banner-text">Our Interior<br> Team</h4>
+        <h4 id="banner-para">Specialists in <br>Modern Interiors UK-Based Design & Installation</h4>
+      </div>
+
+    </section>
+
+    <div id="hero-img">
+      <div class="hero-icons">
+        <a href="#" class="social"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
+
+      </div>
+
+    </div>
+
+
+
+
+  </main>
+
+  <div id="stats-container">
+    <div class="stats">
+      <h3>9+</h3>
+      <h5>Years Of <br>Experience</h5>
+    </div>
+    <div class="stats">
+      <h3>50+</h3>
+      <h5>Successful<br> Projects</h5>
+    </div>
+    <div class="stats">
+      <h3>100%</h3>
+      <h5>Quality <br>Assured</h5>
+    </div>
+  </div>
+
+  <section id="welcome-section">
+    <h2 id="title">Welcome</h2>
+    <div id="welcome-main">
+      <div class="welcome-main-banner">
+        <div class="welcome-main-text">
+          <h3>Custom Build For Your Space</h3>
+          <p>We create interiors that improve your lifestyle, bringing structure, warmth and clarity to every corner of
+            your home</p>
+        </div>
+        <div id="silhoutte">
+          <img src="assets/b.png">
+        </div>
+
+      </div>
+      <div class="welcome-main-img">
+        <img src="assets/d.jpg">
+      </div>
+    </div>
+
+  </section>
+
+  <section id="welcome-down">
+    <div>
+      <div id="w-down-grid">
+        <div id="w-down-banner">
+
+          <div class="w-down-points">
+            <img src="assets/kitchen.png">
+            <h4>Efficient Modular Kitchens Designed Well</h4>
+          </div>
+          <div class="w-down-points">
+            <img src="assets/hotel.png">
+            <h4>Functional & Comfortable Bedrooms</h4>
+          </div>
+          <div class="w-down-points">
+            <img src="assets/wardrobe.png">
+            <h4>Custom Wardrobes With Strong Storage</h4>
+          </div>
+
+
+        </div>
+        <div class="welcome-image">
+          <img src="assets/r.jpg">
+          <img src="assets/t.jpg">
+        </div>
+
+      </div>
+      <div class="w-down-para">
+        <p>Our approach is simple: understand how you live and shape the space around it.
+          We focus on clean layouts, warm materials and practical details that make your home feel easy, inviting and
+          well balanced.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div id="portfolio-first">
+
+      <div class="portfolio-text">
+        <h3>Recent Work</h3>
+        <p>A collection of kitchens, wardrobes and bedrooms we’ve built — each project focused on smart storage, clean
+          design and long-lasting performance.</p>
+      </div>
+      <div class="portfolio-image">
+        <img src="assets/e.jpg">
+      </div>
+
+    </div>
+
+    <div class="slider">
+      <img src="assets/s.jpg">
+    </div>
+  </section>
+
+
+  <!-- ----React------ -->
+  <div id="service-root"></div>
+
+  <section id="journey">
+    <h2>Our Journey</h2>
+    <img id="temp" src="assets/t.jpg">
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-inner">
+
+      <!-- Left: Message Form -->
+      <div class="contact-form">
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter your phone number">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Right: Brand + Socials -->
+      <div class="contact-info">
+        <h3>New Era Interiors</h3>
+
+        <!-- Clickable Contact Tiles -->
+        <div class="contact-tiles">
+          <a href="tel:+447940757344" class="tile">
+            <i class="fa-solid fa-phone"></i>
+            <span>+44 7940 757344</span>
+          </a>
+
+          <a href="mailto:info.newerainteriors@gmail.com" class="tile">
+            <i class="fa-solid fa-envelope"></i>
+            <span>info.newerainteriors@gmail.com</span>
+          </a>
+
+          <a href="https://maps.google.com/?q=76 Central Avenue Hayes, UB32BZ" class="tile" target="_blank">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>76 Central Avenue Hayes, UB32BZ</span>
+          </a>
+        </div>
+
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility Statement</a>
+        </div>
+
+
+
+        <div class="contact-socials">
+          <span>Follow us</span>
+          <div class="contact-social-icons">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Copyright strip -->
+  <div class="copyright-strip">
+    <p>© New Era Interiors. All rights reserved.</p>
+  </div>
+
+
+  <!-- Link JS -->
+  <script src="javascript/script.js"></script>
+
+  <script type="module" src="/src/main.jsx"></script>
+
+</body>
+
+</html>
