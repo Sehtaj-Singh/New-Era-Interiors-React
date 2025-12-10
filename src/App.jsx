@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import kitchen from "/assets/kitchen-c.png";
+import bedroom from "/assets/bedroom.png";
+import wardrobe from "/assets/wardrobe-c.png";
 
 export default function App() {
   // 0,1,2 = state 1,2,3
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const anchorRef = useRef(null);   // #service-scroll-anchor
-  const sectionRef = useRef(null);  // #service
+  const anchorRef = useRef(null); // #service-scroll-anchor
+  const sectionRef = useRef(null); // #service
 
   const currentIndexRef = useRef(0);
   const isTransitioningRef = useRef(false);
@@ -36,8 +38,7 @@ export default function App() {
     const section = sectionRef.current;
     if (!anchor || !section) return;
 
-    const vh =
-      window.innerHeight || document.documentElement.clientHeight;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
     const stickyTop = vh * 0.06; // 6vh, same as your CSS top
 
     const scrollDistancePerSlide = vh * SCROLL_DISTANCE_PER_SLIDE_VH;
@@ -220,27 +221,43 @@ export default function App() {
             <div className="service-data">
               <h3>Fitted Kitchen</h3>
               <p>
-                Thoughtfully designed modular kitchens that balance function
-                and clean aesthetics, thoughtfully designed modular kitchens
-                that balance function and clean, tailored precisely to your
-                space.
+                Thoughtfully designed modular kitchens that balance function and
+                clean aesthetics, thoughtfully designed modular kitchens that
+                balance function and clean, tailored precisely to your space.
               </p>
               <div className="service-logo">
-                <i className="fa-brands fa-facebook-f" />
-                <i className="fa-brands fa-x-twitter" />
-                <i className="fa-brands fa-upwork" />
+                <img src={kitchen} alt="kitchen" />
+                <img src={wardrobe} alt="kitchen" />
+                <img src={bedroom} alt="kitchen" />
               </div>
             </div>
 
-            <div
-              className="service-images"
-              style={{ backgroundImage: "url('assets/d.jpg')" }}
-            >
-              <a className="service-image-buttons">
-                <div id="button-left">Book Now</div>
-                <div id="button-right">&gt;</div>
-              </a>
+            <div className="service-below">
+              <div
+                className="service-images"
+                style={{ backgroundImage: "url('assets/d.jpg')" }}>
+              
+                <a className="service-image-buttons">
+                  <div id="button-left">Book Now</div>
+                  <div id="button-right">&gt;</div>
+                </a>
+
+                <div className="slider-buttons">
+                  <a className="nav-btn-prev">
+                    <i className="fa-solid fa-chevron-left"></i>
+                  </a>
+                  <a className="nav-btn-next">
+                    <i className="fa-solid fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div className="service-dots">
+
+              </div>
+
             </div>
+
           </div>
 
           {/* STATE 2 */}
