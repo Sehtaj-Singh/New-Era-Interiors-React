@@ -1,0 +1,120 @@
+
+#service {
+  position: sticky;
+  top: 6vh;
+  padding-top: 2vh;
+  min-height: 90dvh;
+  width: 100%;
+  z-index: 10;
+  background-color: #f8f8f8;
+}
+
+/* Class added by JS when the section is "pinned" in the viewport */
+
+
+#service h2 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  padding-left: 1vw;
+  display: inline-block ;
+  margin-left: 5vw;
+  font-size: 3.5vh;
+  border-bottom: 1px solid #2c2d31e5;
+}
+
+/* Container that holds all slides */
+#service-container {
+  position: relative;
+  /* Use full viewport height minus header/title space */
+  min-height: calc(100vh - 12vh);
+  margin-top: 2vh;
+  margin-bottom: 7vh;
+  overflow: hidden;
+  padding-top: 2vh;
+}
+
+/* --- Slide Transition and Layout Fixes --- */
+
+.service-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  gap: 3vh;
+
+  opacity: 0;
+  pointer-events: none;
+  /* Soft transition for fade in/out */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.service-slide.is-current {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Image and Data Alignment (Fixing the gap/shifting) --- */
+
+.service-data{
+  width: 90%;
+  max-width: 600px;
+  margin-left: auto; /* Center within the available space */
+  margin-right: auto;
+  padding-right: 5vw;
+}
+
+.service-data h3{
+  text-align: right;
+  margin: 1vh 2vw;
+}
+.service-data p{
+  text-align: right;
+  margin: 1vh 2vw;
+}
+
+.service-logo{
+  display: flex;
+  justify-content: right;
+}
+
+.service-logo img{
+  width: 8vw;
+}
+
+.service-images{
+  /* Fixed width to remove excess horizontal space */
+  width: 70vw;
+  max-width: 400px;
+  position: relative;
+  /* This aspect ratio fixes the height issue that caused the "long gap" */
+  background: url("/assets/r1.jpg")center/cover no-repeat ;
+  aspect-ratio: 2093/2555;
+  margin-bottom: 5vh;
+  align-self: center;
+}
+
+.service-image-buttons{
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  display: flex;
+  transform: translateX(100%);
+}
+
+#button-left{
+  background-color: #fff;
+  padding: 1vh 2vw;
+  font-size: 4vw;
+}
+
+#button-right{
+  width: 8vw;
+  background-color: black;
+  color: #fff;
+  padding: 1vh 2vw;
+  font-size: 4vw;
+}
+

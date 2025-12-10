@@ -1,0 +1,60 @@
+/* css/portfolio.css */
+
+#portfolio h2 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  font-size: 4vh;
+  display: inline-block ;
+  border-bottom: 1px solid #2c2d31e5;
+  margin-top: 4vh;
+   padding-left: 1vw;
+  padding-right: 3vw;
+  margin-bottom: 4vh;
+  margin-left: 5vw;
+}
+
+#portfolio-first {
+  display: flex;
+  margin-bottom: 4vh;
+}
+
+.portfolio-text h3{
+  text-align: center;
+  font-family: var(--font-body);
+  color: #2c2d31;
+}
+.portfolio-text p{
+  text-align: center;
+  font-family: var(--font-subtitle);
+  color: #2c2d31;
+}
+
+/* text on left */
+.portfolio-text {
+  width: 45vw;
+  margin-left: 3vw;
+  margin-right: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+/* image on right */
+.portfolio-image {
+  width: 45vw;
+}
+
+.portfolio-image img {
+  width: 100%;
+}
+
+/* slider image below */
+.slider img {
+  width: 90vw;
+  margin-left: 5vw;
+}
+#portfolio{
+  margin-bottom: 5vh;
+}
