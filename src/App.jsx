@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../css/service.css";
+
 
 export default function App() {
   // 0,1,2 = state 1,2,3

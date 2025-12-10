@@ -90,7 +90,7 @@
   max-width: 400px;
   position: relative;
   /* This aspect ratio fixes the height issue that caused the "long gap" */
-  background: url("../assets/r1.jpg")center/cover no-repeat ;
+  background: url("/assets/r1.jpg")center/cover no-repeat ;
   aspect-ratio: 2093/2555;
   margin-bottom: 5vh;
   align-self: center;
