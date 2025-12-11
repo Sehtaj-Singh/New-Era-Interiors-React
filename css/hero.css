@@ -55,7 +55,7 @@ font-size: 3vh;
 /* Hero banner */
 #banner {
   position: absolute;
-  right: 3vw;
+  right: 0vw;
   top: 16vh;
   height: 26vh;
   z-index: 10;
