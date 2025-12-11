@@ -202,127 +202,154 @@ export default function App() {
     };
   }, []);
 
-  // --------------------------
-  // JSX – same as before
-  // --------------------------
-  return (
-    <div id="service-scroll-anchor" ref={anchorRef}>
-      <section id="service" ref={sectionRef}>
-        <h2>Our Service</h2>
+ return (
+  <div id="service-scroll-anchor" ref={anchorRef}>
+    <section id="service" ref={sectionRef}>
+      <h2>Our Service</h2>
 
-        <div id="service-container">
-          {/* STATE 1 */}
-          <div
-            className={`service-slide ${
-              currentIndex === 0 ? "is-current" : ""
-            }`}
-            data-index="0"
-          >
-            <div className="service-data">
-              <h3>Fitted Kitchen</h3>
-              <p>
-                Thoughtfully designed modular kitchens that balance function and
-                clean aesthetics, thoughtfully designed modular kitchens that
-                balance function and clean, tailored precisely to your space.
-              </p>
-              <div className="service-logo">
-                <img src={kitchen} alt="kitchen" />
-                <img src={wardrobe} alt="kitchen" />
-                <img src={bedroom} alt="kitchen" />
+      <div id="service-container">
+        
+        {/* ------------------ SLIDE 1 ------------------ */}
+        <div
+          className={`service-slide ${currentIndex === 0 ? "is-current" : ""}`}
+          data-index="0"
+        >
+          <div className="service-data">
+            <h3>Fitted Kitchen</h3>
+            <p>
+              Smart, space-efficient modular kitchens designed for smooth
+              workflow, clean aesthetics, and everyday ease — tailored exactly
+              to your layout.
+            </p>
+            <div className={`service-logo slide-${currentIndex}`}>
+              <img src={kitchen} alt="kitchen" className="logo-kitchen" />
+            </div>
+          </div>
+
+          <div className="service-below">
+
+            <div
+              className="service-images"
+              style={{ backgroundImage: "url('assets/d.jpg')" }}
+            >
+              <div className="slider-buttons">
+                <a className="nav-btn-prev">
+                  <i className="fa-solid fa-chevron-left"></i>
+                </a>
+                <a className="nav-btn-next">
+                  <i className="fa-solid fa-chevron-right"></i>
+                </a>
               </div>
             </div>
 
-            <div className="service-below">
-              <div
-                className="service-images"
-                style={{ backgroundImage: "url('assets/d.jpg')" }}>
-              
-                <a className="service-image-buttons">
-                  <div id="button-left">Book Now</div>
-                  <div id="button-right">&gt;</div>
-                </a>
-
-                <div className="slider-buttons">
-                  <a className="nav-btn-prev">
-                    <i className="fa-solid fa-chevron-left"></i>
-                  </a>
-                  <a className="nav-btn-next">
-                    <i className="fa-solid fa-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div className="service-dots">
-
-              </div>
-
+            {/* DOTS — NON CLICKABLE */}
+            <div className="service-dots-vertical">
+              {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+                <div
+                  key={i}
+                  className={`dot ${currentIndex === i ? "is-active" : ""}`}
+                />
+              ))}
             </div>
 
           </div>
+        </div>
 
-          {/* STATE 2 */}
-          <div
-            className={`service-slide ${
-              currentIndex === 1 ? "is-current" : ""
-            }`}
-            data-index="1"
-          >
-            <div className="service-data">
-              <h3>Custom Wardrobes</h3>
-              <p>
-                Smart storage wardrobes with strong structure, smooth finishes
-                and layouts that make everyday use easy.
-              </p>
-              <div className="service-logo">
-                <i className="fa-brands fa-facebook-f" />
-                <i className="fa-brands fa-x-twitter" />
-                <i className="fa-brands fa-upwork" />
-              </div>
+        {/* ------------------ SLIDE 2 ------------------ */}
+        <div
+          className={`service-slide ${currentIndex === 1 ? "is-current" : ""}`}
+          data-index="1"
+        >
+          <div className="service-data">
+            <h3>Custom Wardrobes</h3>
+            <p>
+              Custom-built wardrobes designed for maximum storage, clean
+              symmetry, and durable everyday convenience — tailored to your
+              needs.
+            </p>
+            <div className={`service-logo slide-${currentIndex}`}>
+              <img src={wardrobe} alt="wardrobe" className="logo-wardrobe" />
             </div>
+          </div>
+
+          <div className="service-below">
 
             <div
               className="service-images"
               style={{ backgroundImage: "url('assets/e.jpg')" }}
             >
-              <a className="service-image-buttons">
-                <div id="button-left">Book Now</div>
-                <div id="button-right">&gt;</div>
-              </a>
+              <div className="slider-buttons">
+                <a className="nav-btn-prev">
+                  <i className="fa-solid fa-chevron-left"></i>
+                </a>
+                <a className="nav-btn-next">
+                  <i className="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+
+            {/* DOTS — NON CLICKABLE */}
+            <div className="service-dots-vertical">
+              {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+                <div
+                  key={i}
+                  className={`dot ${currentIndex === i ? "is-active" : ""}`}
+                />
+              ))}
+            </div>
+
+          </div>
+        </div>
+
+        {/* ------------------ SLIDE 3 ------------------ */}
+        <div
+          className={`service-slide ${currentIndex === 2 ? "is-current" : ""}`}
+          data-index="2"
+        >
+          <div className="service-data">
+            <h3>Comfort Bedrooms</h3>
+            <p>
+              Calming, modern bedrooms crafted with warm ambience and functional
+              balance — designed to fit your lifestyle perfectly.
+            </p>
+            <div className={`service-logo slide-${currentIndex}`}>
+              <img src={bedroom} alt="bedroom" className="logo-bedroom" />
             </div>
           </div>
 
-          {/* STATE 3 */}
-          <div
-            className={`service-slide ${
-              currentIndex === 2 ? "is-current" : ""
-            }`}
-            data-index="2"
-          >
-            <div className="service-data">
-              <h3>Comfort Bedrooms</h3>
-              <p>
-                Calm, comfortable bedroom designs built around warm materials,
-                simple lines and practical details.
-              </p>
-              <div className="service-logo">
-                <i className="fa-brands fa-facebook-f" />
-                <i className="fa-brands fa-x-twitter" />
-                <i className="fa-brands fa-upwork" />
-              </div>
-            </div>
+          <div className="service-below">
 
             <div
               className="service-images"
               style={{ backgroundImage: "url('assets/r.jpg')" }}
             >
-              <a className="service-image-buttons">
-                <div id="button-left">Book Now</div>
-                <div id="button-right">&gt;</div>
-              </a>
+              <div className="slider-buttons">
+                <a className="nav-btn-prev">
+                  <i className="fa-solid fa-chevron-left"></i>
+                </a>
+                <a className="nav-btn-next">
+                  <i className="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
             </div>
+
+            {/* DOTS — NON CLICKABLE */}
+            <div className="service-dots-vertical">
+              {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+                <div
+                  key={i}
+                  className={`dot ${currentIndex === i ? "is-active" : ""}`}
+                />
+              ))}
+            </div>
+
           </div>
         </div>
-      </section>
-    </div>
-  );
+
+      </div>
+    </section>
+  </div>
+);
+
+
 }
