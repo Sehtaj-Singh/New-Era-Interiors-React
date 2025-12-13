@@ -2,11 +2,11 @@
 #service {
   position: sticky;
   top: 6vh;
-  padding-top: 2vh;
+  padding-top: 0.5vh;
   min-height: 90dvh;
   width: 100%;
   z-index: 10;
-  background-color: #fc8989;
+  background-color: #f8f8f8;
 }
 
 /* Class added by JS when the section is "pinned" in the viewport */
@@ -42,12 +42,9 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  
-  gap: 3vh;
-
+  gap: 1vh;
   opacity: 0;
   pointer-events: none;
-  /* Soft transition for fade in/out */
   transition: opacity 0.4s ease-in-out;
 }
 
@@ -72,13 +69,21 @@
 
 .service-data h3{
   text-align: right;
-  margin: 2vh 2vw;
-  font-size: 2.8vh;
+  margin: 1vh 2vw;
+  font-size: 3vh;
+  margin-top: 2vh;
 }
 .service-data p{
   text-align: right;
-  width: 85%;
-  margin: 1vh 2vw;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 80%;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  margin: 0.5vh 2vw;
 }
 
 .service-logo{
@@ -91,14 +96,14 @@
 }
 
 .service-logo img{
-  width:10vw;
+  width:15vw;
 }
 
 .service-images{
-  width: 80vw;
+  width: 85vw;
   position: relative;
   background: url("/assets/r1.jpg")center/cover no-repeat ;
-  aspect-ratio: 2093/2555;
+  aspect-ratio: 0.95;
   margin-bottom: 5vh;
 }
 
@@ -127,7 +132,7 @@
 .nav-btn-prev{
  background-color: #fff;
  padding: 3vw;
- width: 8vw;
+ width: 10vw;
  border-radius: 50%;
  display: flex;
  align-items: center;
@@ -136,7 +141,7 @@
 .nav-btn-next{
    background-color: #0e0e0e;
  
- width: 8vw;
+ width: 10vw;
  border-radius: 50%;
  color: #fff;
  display: flex;
@@ -144,7 +149,7 @@
  justify-content: center;
 }
 .slider-buttons{
-  width: 22vw;
+  width: 25vw;
   display: flex;
   gap: 5vw;
   position: absolute;
