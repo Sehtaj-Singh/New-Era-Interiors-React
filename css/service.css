@@ -73,11 +73,11 @@
 }
 .service-data p {
   text-align: right;
-  width: 80%;
+  width: 85%;
   display: -webkit-box;
-  line-clamp: 4;
+  line-clamp:6;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 6;
   overflow: hidden;
   margin: 0.5vh 2vw;
 }
