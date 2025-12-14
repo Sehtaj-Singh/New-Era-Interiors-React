@@ -34,3 +34,7 @@ section h2 {
 #temp {
   width: 80vw;
 }
+
+html {        
+  scroll-behavior: smooth;
+}
