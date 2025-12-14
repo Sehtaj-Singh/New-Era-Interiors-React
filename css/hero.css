@@ -1,22 +1,49 @@
-/* css/hero.css */
+/* =========================
+   HERO LAYOUT
+========================= */
 
 #hero {
   display: flex;
   flex-direction: column;
 }
 
+.intro {
+  position: relative;
+  width: 89vw;
+  margin-left: 3vw;
+  padding: 5vh 0 2vh 5vw;
+  border-left: 1px solid var(--color-main-soft);
+}
+
+.intro h1 {
+  font-family: var(--font-title);
+  letter-spacing: 4px;
+  color: #2c2d31;
+  padding-bottom: 1vh;
+  transition: opacity 0.2s linear;
+}
+
+#her0-sub-title {
+  width: 45vw;
+  font-family: var(--font-subtitle);
+  font-weight: 600;
+  font-size: 2.1vh;
+  color: #2c2d31db;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
 #hero-img {
   width: 94vw;
   margin-left: 3vw;
-  aspect-ratio: 2830/3149;
-  background: url("../assets/q1.jpg") center/cover no-repeat;
+  aspect-ratio: 2830 / 3149;
+  background: url("../assets/q1.jpg") center / cover no-repeat;
   position: relative;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
 }
-.hero-icons .social {
-  color: #fff;
-  font-size: 3vh;
-}
+
 .hero-icons {
   position: absolute;
   bottom: 1vh;
@@ -25,47 +52,30 @@
   gap: 7vw;
 }
 
-.intro {
-  position: relative;
-  width: 89vw;
-  margin-left: 3vw;
-  padding-left: 5vw;
-  border-left: 1px solid var(--color-main-soft);
-  padding-top: 5vh;
-  padding-bottom: 2vh;
+.hero-icons .social {
+  color: #fff;
+  font-size: 3vh;
 }
 
-.intro h1 {
-  font-family: var(--font-title);
-  letter-spacing: 4px;
-  color: var(--color-main);
-  padding-bottom: 1vh;
-  color: #2c2d31;
-}
+/* =========================
+   HERO BANNER
+========================= */
 
-#her0-sub-title {
-  width: 45vw;
-  color: #2c2d31db;
-  font-family: var(--font-subtitle);
-  font-weight: 600;
-  font-size: 2.1vh;
-}
-
-/* Hero banner */
 #banner {
   position: absolute;
-  right: 0vw;
   top: 16vh;
-  height: 26vh;
-  z-index: 10;
+  right: 0;
   width: 35vw;
-  background: linear-gradient(to right, #2c2d31 0%, #34363b 60%, #3a3b3f 100%);
+  height: 26vh;
   padding: 1vh 2vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.35),
+  background: linear-gradient(to right, #2c2d31 0%, #34363b 60%, #3a3b3f 100%);
+  box-shadow:
+    4px 5px 10px rgba(0, 0, 0, 0.35),
     inset 3px 3px 7px rgba(148, 148, 148, 0.5);
+  z-index: 10;
 }
 
 #banner::after {
@@ -73,79 +83,71 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.2; /* adjust grain strength */
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-#banner-head {
-  color: #fff;
-  font-family: var(--font-body);
-  font-weight: 400;
-  text-align: left;
-  font-size: 2vh;
-}
-
-#banner-text {
-  color: #fff;
-  font-weight: 400;
-  font-family: var(--font-body);
-  text-align: left;
-  font-size: 1.8vh;
-}
-
+#banner-head,
+#banner-text,
 #banner-para {
-  color: #fff;
-  font-weight: 400;
   font-family: var(--font-body);
+  font-weight: 400;
+  color: #fff;
   text-align: left;
-  font-size: 1.8vh;
 }
+
+#banner-head { font-size: 2vh; }
+#banner-text,
+#banner-para { font-size: 1.8vh; }
+
+/* =========================
+   STATS
+========================= */
 
 #stats-container {
   display: flex;
-  margin-top: 3vh;
   justify-content: space-evenly;
+  margin-top: 3vh;
 }
 
 .stats {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 0.7vh;
 }
+
 .stats h3 {
-  font-size: 3.5vh;
-  color: #2c2d31c3;
-  letter-spacing: 1px;
   font-family: var(--font-title);
+  font-size: 3.5vh;
+  letter-spacing: 1px;
+  color: #2c2d31c3;
 }
 
 .stats h5 {
-  text-align: center;
-  font-size: 1.8vh;
   font-family: var(--font-body);
+  font-size: 1.8vh;
+  text-align: center;
   color: #2c2d319d;
 }
 
-/* ---------- HEADER SCROLL FADE ---------- */
+/* =========================
+   HEADER
+========================= */
 
 header#site-header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   height: 6vh;
-  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  opacity: 0; /* JS will control this */
-  background: #edefef; /* soft light grey */
+  background: #edefef;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 0.25s linear;
-  pointer-events: none; /* enabled when opacity > 0 */
+  z-index: 1000;
 }
 
 .header-inner {
@@ -156,63 +158,119 @@ header#site-header {
   justify-content: space-between;
 }
 
-
 .header-left {
   display: flex;
   align-items: center;
   gap: 4vw;
 }
 
-/* Logo circle */
-
-.header-logo-box img{
+.header-logo-box img {
   width: 8vw;
 }
 
-/* Brand text */
 .header-brand {
   font-family: var(--font-title);
-  font-size: 2vh;
+  font-size: 2.2vh;
   letter-spacing: 2px;
   font-weight: 600;
   color: #2c2d31;
 }
 
-/* Bars button */
-.header-menu-btn {
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
 }
 
-.header-menu-btn i {
-  font-size: 3vh;
+.menu-btn i {
+  font-size: 2.6vh;
   color: #2c2d31;
+  transition: transform 0.3s ease;
 }
 
-/* Title fade (no movement) */
-.intro h1 {
-  transition: opacity 0.2s linear;
+.menu-btn.open i {
+  transform: rotate(90deg);
 }
 
-/* TABLET PORTRAIT */
+/* =========================
+   SIDE MODAL
+========================= */
+
+.side-modal {
+  position: fixed;
+  inset: 0;
+  transform: translateX(100%);
+  transition: transform 0.9s cubic-bezier(0.25, 0.9, 0.25, 1);
+  background: #fff;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.side-modal.open {
+  transform: translateX(0);
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#modal-head {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.modal-close {
+  font-size: 4vh;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5vw;
+  color: #1b1b1b;
+}
+
+.main-modal-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 20vh;
+}
+
+.main-modal-nav a {
+  width: 30vw;
+  text-align: center;
+  padding-bottom: 1vh;
+  font-family: var(--font-body);
+  font-size: 3vh;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #1b1b1b;
+  border-bottom: 1px solid #1b1b1bc0;
+  transition: 0.25s ease;
+}
+
+.main-modal-nav a:hover {
+  color: #0a3d62;
+}
+
+/* =========================
+   TABLET PORTRAIT
+========================= */
+
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
-  .intro h1 {
-    font-size: 3.7vh;
-    line-height: 1.2;
+  #hero {
+    flex-direction: row;
   }
-  #hero-img {
-    width: 50vw;
-    margin-right: 3vw;
-    aspect-ratio: 2830/3149;
-    margin-top: 11vh;
-    margin-left: 0;
-  }
-  #her0-sub-title {
-    font-size: 2vh;
-    width: 40vw;
-  }
+
   .intro {
     width: 47vw;
     margin-left: 0;
@@ -220,41 +278,41 @@ header#site-header {
     border-left: none;
     border-bottom: 1px solid var(--color-main-soft);
   }
-  #hero {
-    flex-direction: row;
-  }
-  #banner {
-    height: 23vh;
-    bottom: 2vh;
-    top: auto;
-    width: 35vw;
-    left: 4vw;
-    justify-content: space-between;
-    padding: 2vh 2vw;
-  }
-  .intro-title {
-    display: flex;
-  }
-  #banner-head {
-    font-size: 2.4vh;
+
+  .intro h1 {
+    font-size: 3.7vh;
+    line-height: 1.2;
   }
 
-  #banner-text {
-    font-size: 2.2vh;
-  }
-  #banner-para{
+  #her0-sub-title {
+    width: 40vw;
     font-size: 2vh;
   }
-  .hero-icons{
-     gap: 4vw;
+
+  #hero-img {
+    width: 50vw;
+    margin: 11vh 3vw 0 0;
   }
-  .stats{
+
+  #banner {
+    top: auto;
+    bottom: 2vh;
+    left: 4vw;
+    height: 23vh;
+    padding: 2vh 2vw;
+  }
+
+  .hero-icons {
+    gap: 4vw;
+  }
+
+  #stats-container {
+    margin-top: 5vh;
+    justify-content: space-around;
+  }
+
+  .stats {
     flex-direction: row;
     gap: 2vw;
-    
-  }
-  #stats-container{
-    justify-content: space-around;
-    margin-top: 5vh;
   }
 }
