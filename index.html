@@ -44,11 +44,12 @@
 
     </div>
   </header>
-
+ 
   <main id="hero">
     <section class="intro">
       <h1>NEW ERA<br> INTERIORS</h1>
       <h4 id="her0-sub-title">Modern Interior Solutions Designed <br>for Inspired Living</h4>
+      
       <div id="banner">
 
         <h3 id="banner-head">Presented by</h3>
@@ -175,7 +176,7 @@
       <div class="journey-image">
         
         <h3>Crafting <br>Inspired Spaces</h3>
-        <a>Our Projects</a>
+        <a>Projects</a>
 
       </div>
 
@@ -264,14 +265,22 @@
 
   <!-- Copyright strip -->
   <div class="copyright-strip">
-    <p>© New Era Interiors. All rights reserved.</p>
-  </div>
+  <p>© <span id="current-year"></span> New Era Interiors. All rights reserved.</p>
+</div>
 
 
   <!-- Link JS -->
   <script src="/javascript/script.js"></script>
 
   <script type="module" src="/src/main.jsx"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const year = new Date().getFullYear();
+    document.getElementById("current-year").textContent = year;
+  });
+</script>
+
 
 </body>
 

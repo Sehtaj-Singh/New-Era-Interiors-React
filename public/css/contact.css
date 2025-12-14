@@ -119,7 +119,6 @@
   padding: 1.5vh 2vw;
   text-decoration: none;
   color: #2c2d31;
-  
   border-radius: 8px;
   font-family: var(--font-body);
   font-size: 1.7vh;
@@ -205,4 +204,27 @@
   font-family: var(--font-body);
   font-size: 1.6vh;
   color: #ffffff;
+}
+
+/* TABLET PORTRAIT */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+  .form-group label {
+  font-size: 2vh;
+  padding-left: 4vw;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 2vh;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vh;
+  margin-bottom: 2.2vh;
+}
+.contact-info h3 {
+  font-size: 3vh;
+}
+
 }

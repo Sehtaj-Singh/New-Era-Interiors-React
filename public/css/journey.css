@@ -21,9 +21,10 @@
   display: flex;
   align-items: center;
   padding: 2vh 0;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 4vh;
   flex-direction: column;
+  gap: 5vh;
 }
 
 .journey-image h3{
@@ -32,7 +33,6 @@
   text-align: center;
 letter-spacing: 1px;
 font-weight: 400;
-margin-top: 5vh;
 }
 .journey-para p{
 font-family: var(--font-subtitle);
@@ -46,11 +46,31 @@ line-height: 1.5;
   margin-top: 4vh;
 }
 .journey-image a{
-color: #fff;
+color: #2c2d31;
 border: 1px solid #fff;
 text-decoration: none;
-padding: 1vh 3vw;
+background-color: #fff;
+padding: 0.6vh 3vw;
 border-radius: 12px;
-font-size: 2.2vh;
+font-size: 2vh;
 font-family: var(--font-body);
+}
+
+/* TABLET PORTRAIT */
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+  
+#journey h2 {
+  margin-top: 5vh;
+}
+.journey-image h3{
+  font-size: 4.5vh;
+}
+.journey-para p{
+font-size: 2.5vh;
+width: 88vw;
+margin-left: 6vw;
+}
+.journey-image{
+  gap: 8vh;
+}
 }

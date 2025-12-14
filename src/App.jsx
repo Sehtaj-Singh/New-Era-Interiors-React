@@ -230,7 +230,7 @@ export default function App() {
 
             <div
               className="service-images"
-              style={{ backgroundImage: "url('assets/d.jpg')" }}
+              style={{ backgroundImage: "url('assets/slider-A.png')" }}
             >
               <div className="slider-buttons">
                 <a className="nav-btn-prev">
@@ -321,7 +321,7 @@ export default function App() {
 
             <div
               className="service-images"
-              style={{ backgroundImage: "url('assets/r.jpg')" }}
+              style={{ backgroundImage: "url('assets/slider-C.jpg')" }}
             >
               <div className="slider-buttons">
                 <a className="nav-btn-prev">
