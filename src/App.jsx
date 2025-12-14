@@ -217,7 +217,7 @@ export default function App() {
           <div className="service-data">
             <h3>Fitted Kitchen</h3>
             <p>
-              Smart, space-efficient modular kitchens designed for smooth workflow, clean aesthetics, and everyday ease — tailored exactly to your layout, lifestyle needs, and long-term daily use with practical detailing.
+              Smart, space-efficient modular kitchens designed for seamless workflow, refined aesthetics, and effortless everyday use — customised to your layout, lifestyle requirements, and long-term functionality with carefully considered detailing.
             </p>
             <div className={`service-logo slide-${currentIndex}`}>
               <img src={kitchen} alt="kitchen" className="logo-kitchen" />
@@ -261,7 +261,7 @@ export default function App() {
           <div className="service-data">
             <h3>Custom Wardrobes</h3>
             <p>
-              Custom-built wardrobes designed for maximum storage, clean symmetry, and durable everyday convenience — tailored to your space, habits, and evolving storage requirements with refined finishes.
+              Custom-built wardrobes designed for maximum storage, clean symmetry, and effortless everyday convenience — customised to your space, habits, and evolving storage needs with refined, long-lasting finishes.
             </p>
             <div className={`service-logo slide-${currentIndex}`}>
               <img src={wardrobe} alt="wardrobe" className="logo-wardrobe" />
@@ -272,7 +272,7 @@ export default function App() {
 
             <div
               className="service-images"
-              style={{ backgroundImage: "url('assets/e.jpg')" }}
+              style={{ backgroundImage: "url('assets/slider-B.png')" }}
             >
               <div className="slider-buttons">
                 <a className="nav-btn-prev">
@@ -305,7 +305,7 @@ export default function App() {
           <div className="service-data">
             <h3>Comfort Bedrooms</h3>
             <p>
-              Calming, modern bedrooms crafted with warm ambience and functional balance — designed to fit your lifestyle perfectly while supporting comfort, relaxation, and effortless daily routines.
+              Calming, modern bedrooms designed with warm ambience and functional balance — thoughtfully tailored to your lifestyle, supporting deep comfort, everyday relaxation, and effortless daily living with refined, lasting details.
             </p>
             <div className={`service-logo slide-${currentIndex}`}>
               <img src={bedroom} alt="bedroom" className="logo-bedroom" />

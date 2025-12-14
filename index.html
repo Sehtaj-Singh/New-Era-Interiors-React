@@ -38,9 +38,9 @@
       </div>
 
       <!-- Font Awesome bars button -->
-      <button class="header-menu-btn" type="button" aria-label="Open Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sideModal">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
     </div>
   </header>
@@ -280,6 +280,21 @@
     document.getElementById("current-year").textContent = year;
   });
 </script>
+
+ <aside id="sideModal" class="side-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Main menu">
+    <header id="modal-head">
+      <button class="modal-close" aria-label="Close menu">&times;</button>
+    </header>
+
+    <div class="modal-body">
+      <nav class="main-modal-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#project-section">Projects</a>
+        <a href="#contact-section">Contact</a>
+      </nav>
+    </div>
+  </aside>
 
 
 </body>
