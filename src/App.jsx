@@ -217,9 +217,7 @@ export default function App() {
           <div className="service-data">
             <h3>Fitted Kitchen</h3>
             <p>
-              Smart, space-efficient modular kitchens designed for smooth
-              workflow, clean aesthetics, and everyday ease — tailored exactly
-              to your layout.
+              Smart, space-efficient modular kitchens designed for smooth workflow, clean aesthetics, and everyday ease — tailored exactly to your layout, lifestyle needs, and long-term daily use with practical detailing.
             </p>
             <div className={`service-logo slide-${currentIndex}`}>
               <img src={kitchen} alt="kitchen" className="logo-kitchen" />
@@ -263,9 +261,7 @@ export default function App() {
           <div className="service-data">
             <h3>Custom Wardrobes</h3>
             <p>
-              Custom-built wardrobes designed for maximum storage, clean
-              symmetry, and durable everyday convenience — tailored to your
-              needs.
+              Custom-built wardrobes designed for maximum storage, clean symmetry, and durable everyday convenience — tailored to your space, habits, and evolving storage requirements with refined finishes.
             </p>
             <div className={`service-logo slide-${currentIndex}`}>
               <img src={wardrobe} alt="wardrobe" className="logo-wardrobe" />
@@ -309,8 +305,7 @@ export default function App() {
           <div className="service-data">
             <h3>Comfort Bedrooms</h3>
             <p>
-              Calming, modern bedrooms crafted with warm ambience and functional
-              balance — designed to fit your lifestyle perfectly.
+              Calming, modern bedrooms crafted with warm ambience and functional balance — designed to fit your lifestyle perfectly while supporting comfort, relaxation, and effortless daily routines.
             </p>
             <div className={`service-logo slide-${currentIndex}`}>
               <img src={bedroom} alt="bedroom" className="logo-bedroom" />
