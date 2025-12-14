@@ -112,8 +112,8 @@
   color: #2c2d31;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 1px 10px #2c2d3188,inset
-  1px 1px 10px #80808170;
+  box-shadow: 2px 2px 10px #2c2d3188,
+  inset 1px 1px 10px #80808147;
 }
 .nav-btn-next {
   background-color: #2c2d31;
@@ -124,7 +124,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 
-  2px 1px 10px #2c2d3188,
+  2px 2px 10px #2c2d3188,
   inset 1px 1px 10px #a0a0a079;
 
 }
