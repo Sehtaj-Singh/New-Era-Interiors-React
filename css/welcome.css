@@ -193,3 +193,81 @@ font-size: 2.1vh;
   gap: 3vh;
 }
 }
+
+
+/* Laptop / Desktop */
+@media (min-width: 1025px) {
+#title {
+  font-size: 6vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+#welcome-main{
+  flex-direction: row-reverse;
+  width: 100vw;
+  margin-bottom: 10vh;
+}
+.welcome-main-banner{
+  width: 50%; 
+  margin-top: 0;
+  gap: 2vw;
+}
+.welcome-main-img{
+  width: 50%;
+  margin-left: 3vw;
+}
+.welcome-main-img img {
+  width: 90%;
+  
+}
+.welcome-main-text h3{
+  font-size: 4.5vh;
+}
+.welcome-main-banner p{
+  font-size: 24px;
+}
+.welcome-main-text{
+  margin-left: 0;
+}
+#welcome-down-wrap{
+  display: flex;
+  width: 100vw;
+  margin-bottom: 10vh;
+}
+
+.welcome-image{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  width: 52vw;
+}
+.welcome-image img {
+  width: 25vw;
+}
+#w-down-banner{
+  width: 15vw;
+  margin-right: 3vw;
+}
+.w-down-para p {
+width: 80%;
+margin-left:10%;
+font-size: 3vh;
+margin-top: 0;
+}
+#w-down-grid{
+  margin-top: 0;
+  
+}
+.w-down-points img{
+  width:2.5vw;
+}
+.w-down-para{
+  display: flex;
+  width: 27vw;
+  align-items: center;
+}
+.w-down-points h4{
+  display: inline;
+  width: 13vw;
+}
+}

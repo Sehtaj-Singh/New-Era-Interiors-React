@@ -129,8 +129,6 @@
   font-size: 3vh;
 }
 
-
-
 /* ----------------------------- */
 /* LEGAL LINKS                   */
 /* ----------------------------- */
@@ -140,6 +138,8 @@
   display: flex;
   flex-direction: column;
   gap: 1vh;
+  align-items: center;
+  margin-bottom: 3vh;
 }
 
 .legal-links a {
@@ -148,7 +148,7 @@
   color: #2c2d31;
   text-decoration: none;
   opacity: 1;
-  font-weight: 500;
+  font-weight: 600;
   transition: opacity 0.2s ease;
 }
 
@@ -209,22 +209,68 @@
 /* TABLET PORTRAIT */
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
   .form-group label {
-  font-size: 2vh;
-  padding-left: 4vw;
+    font-size: 2vh;
+    padding-left: 4vw;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 2vh;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vh;
+    margin-bottom: 2.2vh;
+  }
+  .contact-info h3 {
+    font-size: 3vh;
+  }
 }
 
-.form-group input,
-.form-group textarea {
-  font-size: 2vh;
+/* Laptop / Desktop */
+@media (min-width: 1025px) {
+  .contact-inner {
+    flex-direction: row;
+    margin-top: 6vh;
+  }
+  .contact-form {
+    margin-right: auto;
+    margin-left: 3vw;
+    padding: 2.5vh 4vw;
+    width: 50%;
+  }
+  #contact {
+    margin-top: 10vh;
+  }
+  #contact h2{
+    font-size: 6vh;
+  }
+  .contact-info{
+    margin-right: 3vw;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contact-social-icons{
+    gap: 2vw;
+  }
+  .contact-socials span{
+    font-size: 2.5vh;
+  }
+  .form-group{
+    gap: 1.5vh;
+  }
+  .contact-tiles{
+    margin: 2.2vh 0;
+  }
+  .form-group input,
+.form-group textarea{
+  padding: 1.2vh 2vw;
+  width: 100%;
 }
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8vh;
-  margin-bottom: 2.2vh;
+.form-group label{
+  padding-left: 2vw;
 }
-.contact-info h3 {
-  font-size: 3vh;
-}
-
 }

@@ -225,5 +225,80 @@
 .service-slide{
   gap: 2vh;
 }
+.nav-btn-prev i{
+  font-size: 3vw;
+}
+.nav-btn-next i{
+  font-size: 3vw;
+}
+.service-dots-vertical{
+   right: 12vw;
+   gap: 24px;
+}
+.service-dots-vertical .dot{
+  width: 18px;
+  height: 18px;
+}
+
+
+
+}
+
+/* Laptop / Desktop */
+@media (min-width: 1025px) {
+.service-slide{
+  flex-direction: row-reverse;
+}
+.service-below{
+  width: 50vw;
+}
+.service-images{
+  margin-left: 5vh;
+    width: 40vw;
+}
+#service h2{
+  font-size: 5vh;
+}
+.service-logo img {
+  width: 8vw;
+}
+.nav-btn-prev{
+   width: 4vw;
+   padding: 1vw;
+}
+.nav-btn-next{
+   width: 4vw;
+}
+.slider-buttons{
+  width: 13vw;
+  right: -6vw;
+}
+.service-data{
+  width: 50vw;
+}
+.service-data h3{
+  font-size: 5.5vh;
+  margin-bottom: 6vh;
+}
+.service-data p{
+  font-size: 4vh;
+  margin-bottom: 3vh;
+  line-clamp:10;
+  -webkit-line-clamp:10;
+}
+.logo-wardrobe {
+  margin-right: 7.5vw;
+}
+.logo-bedroom {
+  margin-right: 15vw;
+}
+.service-dots-vertical{
+  right: 2vw;
+  gap: 20px;
+}
+.service-dots-vertical .dot{
+  width: 16px;
+  height: 16px;
+}
 
 }
