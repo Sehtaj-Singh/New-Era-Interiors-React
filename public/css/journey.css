@@ -74,3 +74,36 @@ margin-left: 6vw;
   gap: 8vh;
 }
 }
+
+/* Laptop / Desktop */
+@media (min-width: 1025px) {
+#journey h2 {
+  font-size: 6vh;
+  margin-top: 10vh;
+  margin-bottom: 7vh;
+}
+#journey-wrap{
+  display: flex;
+}
+.journey-image{
+  width: 40vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.journey-para{
+  width: 50vw;
+  display: flex;
+  align-items: center;
+}
+.journey-para p{
+  width: 90%;
+  margin-left: 5%;
+  font-size: 4vh;
+}
+.journey-image h3{
+  font-size: 4vh;
+}
+.journey-image a{
+  font-size: 2.5vh;
+}
+}

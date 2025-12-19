@@ -153,12 +153,12 @@
 
 @media (min-width: 1025px) {
   .slide {
-    width: 50vw;
+    width: 40vw;
   }
 
   .slider-track {
-    padding: 0 25vw;
-    gap: 3vw;
+    padding: 0 30vw;
+    gap: 5vw;
   }
 }
 
@@ -174,4 +174,31 @@
   .portfolio-text p {
     font-size: 2.6vh;
   }
+}
+
+/* Laptop / Desktop */
+@media (min-width: 1025px) {
+#portfolio h2 {
+  font-size: 6vh;
+  margin-bottom: 10vh;
+}
+.portfolio-image {
+  width: 32vw;
+}
+.portfolio-text h3 {
+  font-size: 6vh;
+}
+.portfolio-text p {
+  font-size: 4vh;
+  width: 35vw;
+  
+}
+.portfolio-text{
+   margin: 0 5vw 0 9vw;
+   justify-content: space-evenly;
+}
+
+#portfolio-first {
+  margin-bottom: 10vh;
+}
 }
