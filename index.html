@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet">
- 
+
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/hero.css">
   <link rel="stylesheet" href="/css/welcome.css">
@@ -39,17 +39,17 @@
 
       <!-- Font Awesome bars button -->
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sideModal">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
     </div>
   </header>
- 
+
   <main id="hero">
     <section class="intro">
       <h1>NEW ERA<br> INTERIORS</h1>
       <h4 id="her0-sub-title">Modern Interior Solutions Designed <br>for Inspired Living</h4>
-      
+
       <div id="banner">
 
         <h3 id="banner-head">Presented by</h3>
@@ -61,8 +61,10 @@
 
     <div id="hero-img">
       <div class="hero-icons">
-        <a href="https://www.instagram.com/newerabedrooms?igsh=cXdwOXdibXlhODIz" class="social" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100063654859699" class="social" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/newerabedrooms?igsh=cXdwOXdibXlhODIz" class="social" target="_blank"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100063654859699" class="social" target="_blank"><i
+            class="fa-brands fa-facebook"></i></a>
         <a href="#" class="social" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 
       </div>
@@ -104,7 +106,7 @@
 
       </div>
       <div class="welcome-main-img">
-        <img src="/assets/d.jpg">
+        <img src="/assets/welcome.jpg">
       </div>
     </div>
 
@@ -131,8 +133,8 @@
 
         </div>
         <div class="welcome-image">
-          <img src="/assets/r.jpg">
-          <img src="/assets/t.jpg">
+          <img src="/assets/welcome-grid-A.png">
+          <img src="/assets/welcome-grid-B.jpg">
         </div>
 
       </div>
@@ -160,8 +162,28 @@
 
     </div>
 
-    <div class="slider">
-      <img src="/assets/s.jpg">
+    <div class="portfolio-slider">
+
+      <button class="slider-btn prev" aria-label="Previous slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="slider-track">
+        <div class="slide"><img src="/assets/slider-1.png"></div>
+        <div class="slide"><img src="/assets/slider-2.jpg"></div>
+        <div class="slide"><img src="/assets/slider-3.jpeg"></div>
+        <div class="slide"><img src="/assets/slider-4.jpeg"></div>
+        <div class="slide"><img src="/assets/slider-5.jpeg"></div>
+        <div class="slide"><img src="/assets/slider-6.jpg"></div>
+        <div class="slide"><img src="/assets/slider-7.png"></div>
+        <div class="slide"><img src="/assets/slider-8.jpg"></div>
+        <div class="slide"><img src="/assets/slider-9.jpg"></div>
+      </div>
+
+      <button class="slider-btn next" aria-label="Next slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
     </div>
   </section>
 
@@ -174,18 +196,20 @@
     <div>
 
       <div class="journey-image">
-        
+
         <h3>Crafting <br>Inspired Spaces</h3>
         <a href="#portfolio">Projects</a>
 
       </div>
 
       <div class="journey-para">
-       <p>Our journey is shaped by a belief that every space should reflect purpose, comfort, and individuality. We draw inspiration from the way people live, move, and connect with their surroundings. Through thoughtful design and refined detail, we transform ideas into interiors that inspire and elevate everyday living.</p>
+        <p>Our journey is shaped by a belief that every space should reflect purpose, comfort, and individuality. We
+          draw inspiration from the way people live, move, and connect with their surroundings. Through thoughtful
+          design and refined detail, we transform ideas into interiors that inspire and elevate everyday living.</p>
       </div>
     </div>
 
-    
+
   </section>
 
   <section id="contact">
@@ -245,7 +269,7 @@
 
         <div class="legal-links">
           <a href="privacy.html">Privacy Policy</a>
-          
+
         </div>
 
 
@@ -253,8 +277,10 @@
         <div class="contact-socials">
           <span>Follow us</span>
           <div class="contact-social-icons">
-            <a href="https://www.instagram.com/newerabedrooms?igsh=cXdwOXdibXlhODIz" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100063654859699" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/newerabedrooms?igsh=cXdwOXdibXlhODIz" aria-label="Instagram"
+              target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100063654859699" aria-label="Facebook" target="_blank"><i
+                class="fa-brands fa-facebook"></i></a>
             <a href="#" aria-label="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
           </div>
         </div>
@@ -265,8 +291,8 @@
 
   <!-- Copyright strip -->
   <div class="copyright-strip">
-  <p>© <span id="current-year"></span> New Era Interiors. All rights reserved.</p>
-</div>
+    <p>© <span id="current-year"></span> New Era Interiors. All rights reserved.</p>
+  </div>
 
 
   <!-- Link JS -->
@@ -275,13 +301,13 @@
   <script type="module" src="/src/main.jsx"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const year = new Date().getFullYear();
-    document.getElementById("current-year").textContent = year;
-  });
-</script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const year = new Date().getFullYear();
+      document.getElementById("current-year").textContent = year;
+    });
+  </script>
 
- <aside id="sideModal" class="side-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Main menu">
+  <aside id="sideModal" class="side-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Main menu">
     <header id="modal-head">
       <button class="modal-close" aria-label="Close menu">&times;</button>
     </header>

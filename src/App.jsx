@@ -71,6 +71,84 @@ export default function App() {
       setCurrentIndex(nextIndex);
     };
 
+    /* ========= SERVICE SLIDER BUTTON LOGIC ========= */
+
+    const handlePrevClick = () => {
+      if (isTransitioningRef.current) return;
+
+      const index = currentIndexRef.current;
+
+      // SLIDE 1 → PREV → EJECT UP
+      if (index === 0) {
+        const anchor = anchorRef.current;
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        const stickyTop = vh * 0.06;
+
+        const scrollDistancePerSlide = vh * SCROLL_DISTANCE_PER_SLIDE_VH;
+        const scrollLifeHeight = TOTAL_SLIDES * scrollDistancePerSlide;
+
+        const anchorTop = anchor.offsetTop;
+        const startPin = anchorTop - stickyTop;
+
+        window.scrollTo({
+          top: startPin - 10,
+          behavior: "smooth",
+        });
+        return;
+      }
+
+      // SLIDE 2 / 3 → PREV → NORMAL BACK
+      setCurrentIndex(index - 1);
+    };
+
+    const handleNextClick = () => {
+      if (isTransitioningRef.current) return;
+
+      const index = currentIndexRef.current;
+
+      // SLIDE 3 → NEXT → EJECT DOWN
+      if (index === TOTAL_SLIDES - 1) {
+        const anchor = anchorRef.current;
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        const stickyTop = vh * 0.06;
+
+        const scrollDistancePerSlide = vh * SCROLL_DISTANCE_PER_SLIDE_VH;
+        const scrollLifeHeight = TOTAL_SLIDES * scrollDistancePerSlide;
+
+        const anchorTop = anchor.offsetTop;
+        const startPin = anchorTop - stickyTop;
+        const endPin = startPin + scrollLifeHeight;
+
+        window.scrollTo({
+          top: endPin + 10,
+          behavior: "smooth",
+        });
+        return;
+      }
+
+      // SLIDE 1 / 2 → NEXT → NORMAL FORWARD
+      setCurrentIndex(index + 1);
+    };
+
+    /* ========= ATTACH BUTTONS ========= */
+
+    const prevBtns = sectionRef.current.querySelectorAll(".nav-btn-prev");
+    const nextBtns = sectionRef.current.querySelectorAll(".nav-btn-next");
+
+    prevBtns.forEach((btn) => btn.addEventListener("click", handlePrevClick));
+
+    nextBtns.forEach((btn) => btn.addEventListener("click", handleNextClick));
+
+    /* ========= CLEANUP ========= */
+    return () => {
+      prevBtns.forEach((btn) =>
+        btn.removeEventListener("click", handlePrevClick)
+      );
+      nextBtns.forEach((btn) =>
+        btn.removeEventListener("click", handleNextClick)
+      );
+    };
+
     // -------- DESKTOP: WHEEL (1 scroll = 1 slide) --------
     const handleWheel = (e) => {
       if (!inServiceRangeRef.current) return;
@@ -202,149 +280,164 @@ export default function App() {
     };
   }, []);
 
- return (
-  <div id="service-scroll-anchor" ref={anchorRef}>
-    <section id="service" ref={sectionRef}>
-      <h2>Our Service</h2>
+  return (
+    <div id="service-scroll-anchor" ref={anchorRef}>
+      <section id="service" ref={sectionRef}>
+        <h2>Our Service</h2>
 
-      <div id="service-container">
-        
-        {/* ------------------ SLIDE 1 ------------------ */}
-        <div
-          className={`service-slide ${currentIndex === 0 ? "is-current" : ""}`}
-          data-index="0"
-        >
-          <div className="service-data">
-            <h3>Fitted Kitchen</h3>
-            <p>
-              Smart, space-efficient modular kitchens designed for seamless workflow, refined aesthetics, and effortless everyday use — customised to your layout, lifestyle requirements, and long-term functionality with carefully considered detailing.
-            </p>
-            <div className={`service-logo slide-${currentIndex}`}>
-              <img src={kitchen} alt="kitchen" className="logo-kitchen" />
-            </div>
-          </div>
-
-          <div className="service-below">
-
-            <div
-              className="service-images"
-              style={{ backgroundImage: "url('assets/slider-A.png')" }}
-            >
-              <div className="slider-buttons">
-                <a className="nav-btn-prev">
-                  <i className="fa-solid fa-chevron-left"></i>
-                </a>
-                <a className="nav-btn-next">
-                  <i className="fa-solid fa-chevron-right"></i>
-                </a>
+        <div id="service-container">
+          {/* ------------------ SLIDE 1 ------------------ */}
+          <div
+            className={`service-slide ${
+              currentIndex === 0 ? "is-current" : ""
+            }`}
+            data-index="0"
+          >
+            <div className="service-data">
+              <h3>Fitted Kitchen</h3>
+              <div id="service-suppport">
+                <p>
+                  Smart, space-efficient modular kitchens designed for seamless
+                  workflow, refined aesthetics, and effortless everyday use —
+                  customised to your layout, lifestyle requirements, and
+                  long-term functionality with carefully considered detailing.
+                </p>
+                <div className={`service-logo slide-${currentIndex}`}>
+                  <img src={kitchen} alt="kitchen" className="logo-kitchen" />
+                </div>
               </div>
             </div>
 
-            {/* DOTS — NON CLICKABLE */}
-            <div className="service-dots-vertical">
-              {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`dot ${currentIndex === i ? "is-active" : ""}`}
-                />
-              ))}
+            <div className="service-below">
+              <div
+                className="service-images"
+                style={{ backgroundImage: "url('assets/slider-A.png')" }}
+              >
+                <div className="slider-buttons">
+                  <a className="nav-btn-prev">
+                    <i className="fa-solid fa-chevron-left"></i>
+                  </a>
+                  <a className="nav-btn-next">
+                    <i className="fa-solid fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* DOTS — NON CLICKABLE */}
+              <div className="service-dots-vertical">
+                {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`dot ${currentIndex === i ? "is-active" : ""}`}
+                  />
+                ))}
+              </div>
             </div>
-
-          </div>
-        </div>
-
-        {/* ------------------ SLIDE 2 ------------------ */}
-        <div
-          className={`service-slide ${currentIndex === 1 ? "is-current" : ""}`}
-          data-index="1"
-        >
-          <div className="service-data">
-            <h3>Custom Wardrobes</h3>
-            <p>
-              Custom-built wardrobes designed for maximum storage, clean symmetry, and effortless everyday convenience — customised to your space, habits, and evolving storage needs with refined, long-lasting finishes.
-            </p>
-            <div className={`service-logo slide-${currentIndex}`}>
-              <img src={wardrobe} alt="wardrobe" className="logo-wardrobe" />
-            </div>
           </div>
 
-          <div className="service-below">
-
-            <div
-              className="service-images"
-              style={{ backgroundImage: "url('assets/slider-B.png')" }}
-            >
-              <div className="slider-buttons">
-                <a className="nav-btn-prev">
-                  <i className="fa-solid fa-chevron-left"></i>
-                </a>
-                <a className="nav-btn-next">
-                  <i className="fa-solid fa-chevron-right"></i>
-                </a>
+          {/* ------------------ SLIDE 2 ------------------ */}
+          <div
+            className={`service-slide ${
+              currentIndex === 1 ? "is-current" : ""
+            }`}
+            data-index="1"
+          >
+            <div className="service-data">
+              <h3>Custom Wardrobes</h3>
+              <div id="service-suppport">
+                <p>
+                  Custom-built wardrobes designed for maximum storage, clean
+                  symmetry, and effortless everyday convenience — customised to
+                  your space, habits, and evolving storage needs with refined,
+                  long-lasting finishes.
+                </p>
+                <div className={`service-logo slide-${currentIndex}`}>
+                  <img
+                    src={wardrobe}
+                    alt="wardrobe"
+                    className="logo-wardrobe"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* DOTS — NON CLICKABLE */}
-            <div className="service-dots-vertical">
-              {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`dot ${currentIndex === i ? "is-active" : ""}`}
-                />
-              ))}
+            <div className="service-below">
+              <div
+                className="service-images"
+                style={{ backgroundImage: "url('assets/slider-B.png')" }}
+              >
+                <div className="slider-buttons">
+                  <a className="nav-btn-prev">
+                    <i className="fa-solid fa-chevron-left"></i>
+                  </a>
+                  <a className="nav-btn-next">
+                    <i className="fa-solid fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* DOTS — NON CLICKABLE */}
+              <div className="service-dots-vertical">
+                {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`dot ${currentIndex === i ? "is-active" : ""}`}
+                  />
+                ))}
+              </div>
             </div>
-
-          </div>
-        </div>
-
-        {/* ------------------ SLIDE 3 ------------------ */}
-        <div
-          className={`service-slide ${currentIndex === 2 ? "is-current" : ""}`}
-          data-index="2"
-        >
-          <div className="service-data">
-            <h3>Comfort Bedrooms</h3>
-            <p>
-              Calming, modern bedrooms designed with warm ambience and functional balance — thoughtfully tailored to your lifestyle, supporting deep comfort, everyday relaxation, and effortless daily living with refined, lasting details.
-            </p>
-            <div className={`service-logo slide-${currentIndex}`}>
-              <img src={bedroom} alt="bedroom" className="logo-bedroom" />
-            </div>
           </div>
 
-          <div className="service-below">
-
-            <div
-              className="service-images"
-              style={{ backgroundImage: "url('assets/slider-C.jpg')" }}
-            >
-              <div className="slider-buttons">
-                <a className="nav-btn-prev">
-                  <i className="fa-solid fa-chevron-left"></i>
-                </a>
-                <a className="nav-btn-next">
-                  <i className="fa-solid fa-chevron-right"></i>
-                </a>
+          {/* ------------------ SLIDE 3 ------------------ */}
+          <div
+            className={`service-slide ${
+              currentIndex === 2 ? "is-current" : ""
+            }`}
+            data-index="2"
+          >
+            <div className="service-data">
+              <h3>Comfort Bedrooms</h3>
+              <div id="service-suppport">
+                <p>
+                  Calming, modern bedrooms designed with warm ambience and
+                  functional balance — thoughtfully tailored to your lifestyle,
+                  supporting deep comfort, everyday relaxation, and effortless
+                  daily living with refined, lasting details.
+                </p>
+                <div className={`service-logo slide-${currentIndex}`}>
+                  <img src={bedroom} alt="bedroom" className="logo-bedroom" />
+                </div>
               </div>
             </div>
 
-            {/* DOTS — NON CLICKABLE */}
-            <div className="service-dots-vertical">
-              {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`dot ${currentIndex === i ? "is-active" : ""}`}
-                />
-              ))}
-            </div>
+            <div className="service-below">
+              <div
+                className="service-images"
+                style={{ backgroundImage: "url('assets/slider-C.jpg')" }}
+              >
+                <div className="slider-buttons">
+                  <a className="nav-btn-prev">
+                    <i className="fa-solid fa-chevron-left"></i>
+                  </a>
+                  <a className="nav-btn-next">
+                    <i className="fa-solid fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
 
+              {/* DOTS — NON CLICKABLE */}
+              <div className="service-dots-vertical">
+                {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`dot ${currentIndex === i ? "is-active" : ""}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-
-      </div>
-    </section>
-  </div>
-);
-
-
+      </section>
+    </div>
+  );
 }
