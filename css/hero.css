@@ -15,6 +15,16 @@
   border-left: 1px solid var(--color-main-soft);
 }
 
+.intro-title {
+  display: flex;
+  gap: 3vw;
+}
+
+.intro-title img {
+  margin-top: 1vh;
+  height: 8vh;
+}
+
 .intro h1 {
   font-family: var(--font-title);
   letter-spacing: 4px;
@@ -167,8 +177,8 @@ header#site-header {
   gap: 4vw;
 }
 
-.header-logo-box img {
-  width: 8vw;
+.header-logo-box img{
+  height: 3.5vh;
 }
 
 .header-brand {
@@ -269,7 +279,7 @@ body.no-scroll {
    TABLET PORTRAIT
 ========================= */
 
-@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   #hero {
     flex-direction: row;
   }
@@ -281,6 +291,14 @@ body.no-scroll {
     border-left: none;
     border-bottom: 1px solid var(--color-main-soft);
   }
+  .intro-title {
+    gap: 6vw;
+  }
+
+  .intro-title img {
+    margin-top: 1vh;
+    height: 7vh;
+  }
 
   .intro h1 {
     font-size: 3.7vh;
@@ -288,13 +306,14 @@ body.no-scroll {
   }
 
   #her0-sub-title {
-    width: 40vw;
+    width: 35vw;
     font-size: 2vh;
+    margin-top: 2vh;
   }
 
   #hero-img {
     width: 50vw;
-    margin: 11vh 3vw 0 0;
+    margin: 15vh 3vw 0 0;
   }
 
   #banner {
@@ -303,6 +322,7 @@ body.no-scroll {
     left: 4vw;
     height: 23vh;
     padding: 2vh 2vw;
+    justify-content: space-between;
   }
 
   .hero-icons {
@@ -329,9 +349,8 @@ body.no-scroll {
     flex-direction: row;
     margin-right: auto;
   }
-  #hero-wrap{
+  #hero-wrap {
     display: flex;
-    
   }
 
   .intro {
@@ -352,7 +371,7 @@ body.no-scroll {
 
   #her0-sub-title {
     width: 30vw;
-    font-size: 3.5vh;
+    font-size: 3.8vh;
   }
 
   #hero-img {
@@ -366,15 +385,16 @@ body.no-scroll {
     left: 6vw;
     height: 37vh;
     padding: 2vh 2vw;
+    width: 29vw;
     justify-content: space-around;
   }
   #banner-head {
-  font-size: 3vh;
-}
-#banner-text,
-#banner-para {
-  font-size: 2.5vh;
-}
+    font-size: 3vh;
+  }
+  #banner-text,
+  #banner-para {
+    font-size: 2.5vh;
+  }
 
   .hero-icons {
     gap: 2vw;
@@ -397,4 +417,75 @@ body.no-scroll {
   .header-logo-box img {
     width: 2vw;
   }
+  .intro-title img {
+  margin-top: 4vh;
+  height: 12vh;
+}
+}
+
+/* MOBILE LANDSCAPE */
+@media (max-width: 899px) and (orientation: landscape) {
+  .header-logo-box img {
+  width: 2.5vw;
+}
+}
+
+/* TABLET LANDSCAPE */
+@media (min-width: 768px) and (max-width: 1365px) and (orientation: landscape) {
+  #hero-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #stats-container {
+    margin-top: 5vh;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 3vw;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 2vw;
+  }
+  .intro {
+    width: 47vw;
+    margin-left: 0;
+    padding-left: 4vw;
+    border-left: none;
+    border-bottom: 1px solid var(--color-main-soft);
+  }
+  .intro-title {
+    gap: 6vw;
+  }
+
+  .intro-title img {
+    margin-top: 1vh;
+    height: 7vh;
+  }
+
+  .intro h1 {
+    font-size: 5vh;
+    line-height: 1.2;
+  }
+
+  #her0-sub-title {
+    width: 35vw;
+    font-size: 4vh;
+    margin-top: 2vh;
+  }
+
+  #hero-img {
+    width: 50vw;
+    margin: 15vh 3vw 0 0;
+  }
+
+  #banner {
+    top: auto;
+    bottom: 2vh;
+    left: 4vw;
+    height:40vh;
+    padding: 2vh 2vw;
+    justify-content: space-between;
+  }
+
 }

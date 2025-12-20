@@ -100,7 +100,7 @@
 .service-images {
   width: 85vw;
   position: relative;
-  background: url("/assets/r1.jpg") center/cover no-repeat;
+  background: url("/assets/r1.jpg") center/contain no-repeat;
   aspect-ratio: 0.95;
   margin-bottom: 5vh;
 }
@@ -210,7 +210,6 @@
 
 
 .service-data h3{
-  
   font-size: 3.5vh;
 }
 .service-images {
@@ -272,6 +271,7 @@
 .slider-buttons{
   width: 13vw;
   right: -6vw;
+  bottom: 7vh;
 }
 .service-data{
   width: 50vw;
@@ -295,10 +295,55 @@
 .service-dots-vertical{
   right: 2vw;
   gap: 20px;
+   bottom: 20vh;
 }
 .service-dots-vertical .dot{
   width: 16px;
   height: 16px;
+}
+
+}
+
+/* MOBILE LANDSCAPE */
+@media (max-width: 899px) and (orientation: landscape) {
+  .service-slide{
+  flex-direction: row-reverse;
+}
+.service-below{
+  width: 50vw;
+}
+.service-images{
+  margin-left: 5vh;
+    width: 40vw;
+}
+.service-data{
+  width: 50vw;
+}
+.nav-btn-prev{
+   width: 4vw;
+   padding: 1vw;
+}
+.nav-btn-next{
+   width: 4vw;
+}
+.nav-btn-prev i{
+  font-size: 1vw;
+}
+.nav-btn-next i{
+  font-size: 1vw;
+}
+.slider-buttons{
+  width: 13vw;
+  right: -6vw;
+  bottom: 7vh;
+}
+.service-dots-vertical{
+  right: 2vw;
+  gap: 20px;
+   bottom: 20vh;
+}
+.service-logo img {
+  width: 8vw;
 }
 
 }
