@@ -56,7 +56,7 @@
           <img src="/assets/logo.webp">
           <h1>NEW ERA<br> INTERIORS</h1>
         </div>
-        
+
         <h4 id="her0-sub-title">Modern Interior Solutions Designed <br>for Inspired Living</h4>
 
         <div id="banner">
@@ -213,9 +213,15 @@
     <h2>Contact</h2>
 
     <div class="contact-inner">
-
+    
       <div class="contact-form">
         <form id="contact-form">
+
+          <input type="hidden" name="access_key" value="3774a79f-d961-4d7d-819f-0f264947b922">
+          <input type="hidden" name="subject" value="New Enquiry – New Era Interiors">
+
+
+
           <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Enter your name" required>
@@ -228,8 +234,13 @@
 
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="Enter your phone number">
+
+            <div class="phone-field">
+              <span class="country-code">+44</span>
+              <input id="phone" name="phone" type="tel" placeholder="7123 456789" pattern="[0-9]{9,10}">
+            </div>
           </div>
+
 
           <div class="form-group">
             <label for="message">Message</label>
@@ -259,7 +270,7 @@
         </div>
 
         <div class="legal-links">
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="/pages/privacy.html">Privacy Policy</a>
         </div>
 
         <div class="contact-socials">
@@ -310,5 +321,15 @@
     </div>
   </aside>
 
+  <div id="successModal" class="success-modal">
+  <div class="success-box">
+    <h3>Message Sent</h3>
+    <p>Thank you. We’ll get back to you shortly.</p>
+    <button id="closeSuccess">OK</button>
+  </div>
+</div>
+
+
 </body>
+
 </html>
