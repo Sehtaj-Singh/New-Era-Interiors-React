@@ -271,3 +271,26 @@ margin-top: 0;
   width: 13vw;
 }
 }
+
+/* MOBILE LANDSCAPE */
+@media (max-width: 899px) and (orientation: landscape) {
+ #w-down-grid {
+  
+  height: 75vh;
+  
+}
+.w-down-points img{
+  width: 3vw;
+}
+#w-down-banner{
+  width: 20vw;
+}
+.welcome-image{
+flex-direction: row;
+gap: 4vw;
+}
+.welcome-image img {
+  width: 70%;
+}
+
+}

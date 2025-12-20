@@ -96,7 +96,7 @@
   font-size: 2.5vh;
   padding-left: 3vw;
   margin-bottom: 1.5vh;
-  border-bottom: 1px solid #2c2d31c6;
+  
   padding-bottom: 0.5vh;
   color: #2c2d31;
 }
@@ -190,6 +190,15 @@
   color: #2c2d31;
 }
 
+.contact-info-title{
+  display: flex;
+  border-bottom: 1px solid #2c2d31c6;
+  gap: 4vw;
+}
+.contact-info-title img {
+  height: 3.5vh;
+}
+
 /* ----------------------------- */
 /* COPYRIGHT STRIP               */
 /* ----------------------------- */
@@ -222,6 +231,9 @@
     flex-direction: column;
     gap: 0.8vh;
     margin-bottom: 2.2vh;
+  }
+  .tile span{
+    font-size: 2vh;
   }
   .contact-info h3 {
     font-size: 3vh;
@@ -272,5 +284,12 @@
 }
 .form-group label{
   padding-left: 2vw;
+}
+.tile span{
+    font-size: 2vh;
+  }
+  .contact-info-title{
+  
+  gap: 0vw;
 }
 }

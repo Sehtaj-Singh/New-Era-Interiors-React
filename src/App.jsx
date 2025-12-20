@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import kitchen from "/assets/kitchen-c.png";
-import bedroom from "/assets/bedroom.png";
-import wardrobe from "/assets/wardrobe-c.png";
+import kitchen from "/assets/kitchen-c.webp";
+import bedroom from "/assets/bedroom.webp";
+import wardrobe from "/assets/wardrobe-c.webp";
 
 export default function App() {
   // 0,1,2 = state 1,2,3
@@ -217,7 +217,7 @@ export default function App() {
             <div className="service-below">
               <div
                 className="service-images"
-                style={{ backgroundImage: "url('assets/slider-A.png')" }}>
+                style={{ backgroundImage: "url('assets/slider-A.webp')" }}>
               
                 <div className="slider-buttons">
                   <a className="nav-btn-prev">
@@ -270,7 +270,7 @@ export default function App() {
             <div className="service-below">
               <div
                 className="service-images"
-                style={{ backgroundImage: "url('assets/slider-B.png')" }}
+                style={{ backgroundImage: "url('assets/slider-B.webp')" }}
               >
                 <div className="slider-buttons">
                   <a className="nav-btn-prev">
@@ -319,7 +319,7 @@ export default function App() {
             <div className="service-below">
               <div
                 className="service-images"
-                style={{ backgroundImage: "url('assets/slider-C.jpg')" }}
+                style={{ backgroundImage: "url('assets/slider-C.webp')" }}
               >
                 <div className="slider-buttons">
                   <a className="nav-btn-prev">
