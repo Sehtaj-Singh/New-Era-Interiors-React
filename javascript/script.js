@@ -42,6 +42,119 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", closeModal);
   });
 
+  /* ================= CONTACT FORM SANITIZATION ================= */
+
+  /* ================= CONTACT FORM (WEB3FORMS) ================= */
+
+  const contactForm = document.getElementById("contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+      const messageInput = document.getElementById("message");
+
+      const name = nameInput.value.trim();
+      const email = sanitizeEmail(emailInput.value);
+      const phone = sanitizeUKPhone(phoneInput.value);
+      const message = messageInput.value.trim();
+
+      // silent exit if required data missing
+      if (!name || !email || !message) return;
+      if (!isValidEmail(email)) return;
+      if (phoneInput.value && !phone) return;
+
+      try {
+        await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "3774a79f-d961-4d7d-819f-0f264947b922",
+            subject: `New Enquiry from ${name}`,
+            name,
+            email,
+            phone,
+            message,
+          }),
+        });
+      } catch (_) {
+        // intentionally silent (as requested)
+      }
+
+      contactForm.reset();
+      showSuccessModal();
+    });
+  }
+  /* ================= SUCCESS MODAL ================= */
+
+  function showSuccessModal() {
+    const modal = document.getElementById("successModal");
+    const closeBtn = document.getElementById("closeSuccess");
+
+    if (!modal || !closeBtn) return;
+
+    modal.classList.add("show");
+
+    // Close on button click
+    closeBtn.onclick = () => {
+      modal.classList.remove("show");
+    };
+
+    // Auto close after 3 seconds
+    setTimeout(() => {
+      modal.classList.remove("show");
+    }, 3000);
+  }
+
+  /* ================= HELPERS ================= */
+
+  function sanitizeEmail(email) {
+    return email.trim().toLowerCase().replace(/\s+/g, "");
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
+
+  /* UK PHONE → ALWAYS +44 FORMAT */
+  function sanitizeUKPhone(phone) {
+    if (!phone) return "";
+
+    const cleaned = phone.replace(/\D/g, "");
+
+    // Expect exactly 10 local UK digits
+    if (cleaned.length !== 10) return "";
+
+    return "+44" + cleaned;
+  }
+
+  function isValidUKPhone(phone) {
+    return /^\+44\d{9,10}$/.test(phone);
+  }
+
+  /* ================= PHONE INPUT CLEANING (UK ONLY) ================= */
+
+  const phoneInput = document.getElementById("phone");
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      let digits = this.value.replace(/\D/g, "");
+
+      // UK local mobile = EXACTLY 10 digits
+      if (digits.length > 10) {
+        digits = digits.slice(0, 10);
+      }
+
+      this.value = digits;
+    });
+  }
+
   /* ================= PORTFOLIO SLIDER ================= */
 
   (() => {
@@ -70,8 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slides = Array.from(track.children);
 
     const slideWidth = () =>
-      slides[0].offsetWidth +
-      parseFloat(getComputedStyle(track).gap || 0);
+      slides[0].offsetWidth + parseFloat(getComputedStyle(track).gap || 0);
 
     function setPosition(animate = true) {
       track.style.transition = animate ? "transform 0.45s ease" : "none";
