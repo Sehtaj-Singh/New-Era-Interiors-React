@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -c newerainteriors.co.uk"
   },
   "dependencies": {
     "@use-gesture/react": "^10.3.1",
