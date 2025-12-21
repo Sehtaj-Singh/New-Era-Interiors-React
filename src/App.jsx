@@ -34,157 +34,151 @@ export default function App() {
   }, [currentIndex]);
 
   useEffect(() => {
-  const anchor = anchorRef.current;
-  const section = sectionRef.current;
-  if (!anchor || !section) return;
+    const anchor = anchorRef.current;
+    const section = sectionRef.current;
+    if (!anchor || !section) return;
 
-  const vh = window.innerHeight || document.documentElement.clientHeight;
-  const stickyTop = vh * 0.06;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const stickyTop = vh * 0.06;
 
-  const scrollDistancePerSlide = vh * SCROLL_DISTANCE_PER_SLIDE_VH;
-  const scrollLifeHeight = TOTAL_SLIDES * scrollDistancePerSlide;
+    const scrollDistancePerSlide = vh * SCROLL_DISTANCE_PER_SLIDE_VH;
+    const scrollLifeHeight = TOTAL_SLIDES * scrollDistancePerSlide;
 
-  const sectionHeight = section.offsetHeight || vh;
-  anchor.style.minHeight = `${sectionHeight + scrollLifeHeight}px`;
+    const sectionHeight = section.offsetHeight || vh;
+    anchor.style.minHeight = `${sectionHeight + scrollLifeHeight}px`;
 
-  /* ---------- RANGE DETECTION ---------- */
-  const handleScroll = () => {
-    const scrollY = window.scrollY || window.pageYOffset;
-    const anchorTop = anchor.offsetTop;
+    /* ---------- RANGE DETECTION ---------- */
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const anchorTop = anchor.offsetTop;
 
-    const startPin = anchorTop - stickyTop;
-    const endPin = startPin + scrollLifeHeight;
+      const startPin = anchorTop - stickyTop;
+      const endPin = startPin + scrollLifeHeight;
 
-    inServiceRangeRef.current =
-      scrollY >= startPin && scrollY < endPin;
-  };
+      inServiceRangeRef.current = scrollY >= startPin && scrollY < endPin;
+    };
 
-  /* ---------- SLIDE CHANGE ---------- */
-  const changeSlide = (direction) => {
-    if (isTransitioningRef.current) return;
+    /* ---------- SLIDE CHANGE ---------- */
+    const changeSlide = (direction) => {
+      if (isTransitioningRef.current) return;
 
-    const index = currentIndexRef.current;
-    const nextIndex = index + direction;
-    if (nextIndex < 0 || nextIndex >= TOTAL_SLIDES) return;
+      const index = currentIndexRef.current;
+      const nextIndex = index + direction;
+      if (nextIndex < 0 || nextIndex >= TOTAL_SLIDES) return;
 
-    setCurrentIndex(nextIndex);
-  };
+      setCurrentIndex(nextIndex);
+    };
 
-  /* ---------- EJECT ---------- */
-  const eject = (dir) => {
-    const anchorTop = anchor.offsetTop;
-    const startPin = anchorTop - stickyTop;
-    const endPin = startPin + scrollLifeHeight;
+    /* ---------- EJECT ---------- */
+    const eject = (dir) => {
+      const anchorTop = anchor.offsetTop;
+      const startPin = anchorTop - stickyTop;
+      const endPin = startPin + scrollLifeHeight;
 
-    window.scrollTo({
-      top: dir === -1 ? startPin - 10 : endPin + 10,
-      behavior: "smooth",
-    });
-  };
+      const vh = window.innerHeight;
 
-  /* ---------- WHEEL ---------- */
-  const handleWheel = (e) => {
-    if (!inServiceRangeRef.current) return;
+      window.scrollTo({
+        top:
+          dir === -1
+            ? startPin - vh * 0.5 // 👈 go clearly ABOVE
+            : endPin + vh * 0.5, // 👈 go clearly BELOW
+        behavior: "auto", // 👈 IMPORTANT
+      });
+    };
 
-    const deltaY = e.deltaY;
-    if (!deltaY) return;
+    /* ---------- WHEEL ---------- */
+    const handleWheel = (e) => {
+      if (!inServiceRangeRef.current) return;
 
-    const index = currentIndexRef.current;
+      const deltaY = e.deltaY;
+      if (!deltaY) return;
 
-    if (deltaY < 0 && index === 0) return;
-    if (deltaY > 0 && index === TOTAL_SLIDES - 1) return;
+      const index = currentIndexRef.current;
 
-    if (e.cancelable) e.preventDefault();
-    if (isTransitioningRef.current) return;
+      if (deltaY < 0 && index === 0) return;
+      if (deltaY > 0 && index === TOTAL_SLIDES - 1) return;
 
-    changeSlide(deltaY > 0 ? 1 : -1);
-  };
+      if (e.cancelable) e.preventDefault();
+      if (isTransitioningRef.current) return;
 
-  /* ---------- TOUCH ---------- */
-  const handleTouchStart = (e) => {
-    touchStartYRef.current = e.touches[0].clientY;
-    gestureHandledRef.current = false;
-    pendingExitRef.current = 0;
-  };
+      changeSlide(deltaY > 0 ? 1 : -1);
+    };
 
-  const handleTouchMove = (e) => {
-    if (!inServiceRangeRef.current) return;
+    /* ---------- TOUCH ---------- */
+    const handleTouchStart = (e) => {
+      touchStartYRef.current = e.touches[0].clientY;
+      gestureHandledRef.current = false;
+      pendingExitRef.current = 0;
+    };
 
-    const delta =
-      touchStartYRef.current - e.touches[0].clientY;
+    const handleTouchMove = (e) => {
+      if (!inServiceRangeRef.current) return;
 
-    if (e.cancelable) e.preventDefault();
-    if (gestureHandledRef.current || isTransitioningRef.current) return;
-    if (Math.abs(delta) < 30) return;
+      const delta = touchStartYRef.current - e.touches[0].clientY;
 
-    const index = currentIndexRef.current;
+      if (e.cancelable) e.preventDefault();
+      if (gestureHandledRef.current || isTransitioningRef.current) return;
+      if (Math.abs(delta) < 30) return;
 
-    if (delta > 0) {
-      index < TOTAL_SLIDES - 1
-        ? changeSlide(1)
-        : (pendingExitRef.current = 1);
-    } else {
-      index > 0
-        ? changeSlide(-1)
-        : (pendingExitRef.current = -1);
-    }
+      const index = currentIndexRef.current;
 
-    gestureHandledRef.current = true;
-  };
+      if (delta > 0) {
+        index < TOTAL_SLIDES - 1
+          ? changeSlide(1)
+          : (pendingExitRef.current = 1);
+      } else {
+        index > 0 ? changeSlide(-1) : (pendingExitRef.current = -1);
+      }
 
-  const handleTouchEnd = () => {
-    if (pendingExitRef.current !== 0) {
-      eject(pendingExitRef.current);
-    }
-    pendingExitRef.current = 0;
-    gestureHandledRef.current = false;
-  };
+      gestureHandledRef.current = true;
+    };
 
-  /* ---------- BUTTONS ---------- */
-  const handlePrev = () => {
-    const index = currentIndexRef.current;
-    index === 0 ? eject(-1) : setCurrentIndex(index - 1);
-  };
+    const handleTouchEnd = () => {
+      if (pendingExitRef.current !== 0) {
+        eject(pendingExitRef.current);
+      }
+      pendingExitRef.current = 0;
+      gestureHandledRef.current = false;
+    };
 
-  const handleNext = () => {
-    const index = currentIndexRef.current;
-    index === TOTAL_SLIDES - 1
-      ? eject(1)
-      : setCurrentIndex(index + 1);
-  };
+    /* ---------- BUTTONS ---------- */
+    const handlePrev = () => {
+      const index = currentIndexRef.current;
+      index === 0 ? eject(-1) : setCurrentIndex(index - 1);
+    };
 
-  const prevBtns = section.querySelectorAll(".nav-btn-prev");
-  const nextBtns = section.querySelectorAll(".nav-btn-next");
+    const handleNext = () => {
+      const index = currentIndexRef.current;
+      index === TOTAL_SLIDES - 1 ? eject(1) : setCurrentIndex(index + 1);
+    };
 
-  prevBtns.forEach((b) => b.addEventListener("click", handlePrev));
-  nextBtns.forEach((b) => b.addEventListener("click", handleNext));
+    const prevBtns = section.querySelectorAll(".nav-btn-prev");
+    const nextBtns = section.querySelectorAll(".nav-btn-next");
 
-  /* ---------- LISTENERS ---------- */
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("wheel", handleWheel, { passive: false });
-  window.addEventListener("touchstart", handleTouchStart, { passive: true });
-  window.addEventListener("touchmove", handleTouchMove, { passive: false });
-  window.addEventListener("touchend", handleTouchEnd, { passive: true });
+    prevBtns.forEach((b) => b.addEventListener("click", handlePrev));
+    nextBtns.forEach((b) => b.addEventListener("click", handleNext));
 
-  handleScroll();
+    /* ---------- LISTENERS ---------- */
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-  /* ---------- CLEANUP (ONLY ONE) ---------- */
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    window.removeEventListener("wheel", handleWheel);
-    window.removeEventListener("touchstart", handleTouchStart);
-    window.removeEventListener("touchmove", handleTouchMove);
-    window.removeEventListener("touchend", handleTouchEnd);
+    handleScroll();
 
-    prevBtns.forEach((b) =>
-      b.removeEventListener("click", handlePrev)
-    );
-    nextBtns.forEach((b) =>
-      b.removeEventListener("click", handleNext)
-    );
-  };
-}, []);
+    /* ---------- CLEANUP (ONLY ONE) ---------- */
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
 
+      prevBtns.forEach((b) => b.removeEventListener("click", handlePrev));
+      nextBtns.forEach((b) => b.removeEventListener("click", handleNext));
+    };
+  }, []);
 
   return (
     <div id="service-scroll-anchor" ref={anchorRef}>
@@ -217,8 +211,8 @@ export default function App() {
             <div className="service-below">
               <div
                 className="service-images"
-                style={{ backgroundImage: "url('assets/slider-A.webp')" }}>
-              
+                style={{ backgroundImage: "url('assets/slider-A.webp')" }}
+              >
                 <div className="slider-buttons">
                   <a className="nav-btn-prev">
                     <i className="fa-solid fa-chevron-left"></i>
