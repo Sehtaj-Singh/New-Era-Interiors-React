@@ -44,8 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= CONTACT FORM SANITIZATION ================= */
 
-  /* ================= CONTACT FORM (WEB3FORMS) ================= */
-
   const contactForm = document.getElementById("contact-form");
 
   if (contactForm) {
@@ -268,24 +266,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initHeaderFade() {
   const header = document.getElementById("site-header");
-  const heroTitle = document.querySelector(".intro h1");
+  const hero = document.getElementById("hero");
 
-  if (!header || !heroTitle) return;
+  if (!header || !hero) return;
 
-  const titleTop = heroTitle.offsetTop;
-  const titleHeight = heroTitle.offsetHeight;
-  const maxScroll = titleTop + titleHeight;
+  const fadeStart = hero.offsetHeight * 0.15; // start fade
+  const fadeEnd = hero.offsetHeight * 0.6;   // fully visible
 
   function handleHeaderScroll() {
-    const scrolled = window.scrollY || window.pageYOffset;
-    let progress = scrolled / maxScroll;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
     progress = Math.min(Math.max(progress, 0), 1);
 
     header.style.opacity = progress;
     header.style.pointerEvents = progress > 0 ? "auto" : "none";
-    heroTitle.style.opacity = 1 - progress;
   }
 
-  window.addEventListener("scroll", handleHeaderScroll);
+  window.addEventListener("scroll", handleHeaderScroll, { passive: true });
   handleHeaderScroll();
 }
+

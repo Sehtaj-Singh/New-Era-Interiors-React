@@ -196,7 +196,9 @@
   gap: 4vw;
 }
 .contact-info-title img {
-  height: 3.5vh;
+  width: 40%;
+  height: auto;
+  margin-bottom: 1.5vh;
 }
 
 .phone-field {
