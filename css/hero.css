@@ -394,8 +394,8 @@ body.no-scroll {
   }
 
   #her0-sub-title {
-    width: 30vw;
-    font-size: 3.8vh;
+    width: 25vw;
+    font-size: 4vh;
   }
 
   #hero-img {
@@ -427,7 +427,7 @@ body.no-scroll {
     margin-top: 5vh;
     flex-direction: column;
     justify-content: space-around;
-    margin-right: 3vw;
+    margin-right: 5vw;
   }
 
   .stats {
@@ -440,9 +440,10 @@ body.no-scroll {
    aspect-ratio: 1965/694;
 }
   #hero-img{
-   width: 45vw;
+    width: auto;
+   aspect-ratio: 1415/1455;
     margin-right: 5vw;
-    height: 80vh;
+    height: 85vh;
   }
   .intro img {
     margin-top: 4vh;
