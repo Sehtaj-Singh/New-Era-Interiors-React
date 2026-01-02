@@ -49,7 +49,7 @@
   width: 94vw;
   margin-left: 3vw;
   aspect-ratio: 2830 / 3149;
-  background: url("../assets/q1.jpg") center / cover no-repeat;
+  background: url("../assets/q1.webp") center / cover no-repeat;
   position: relative;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
 }
