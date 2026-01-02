@@ -19,12 +19,28 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <meta name="robots" content="index, follow">
+
+
   <!-- Fonts: -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+  <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap">
+  </noscript>
+
+  <meta property="og:title" content="New Era Interiors">
+  <meta property="og:description" content="Bespoke fitted interiors in London">
+  <meta property="og:image" content="https://www.newerainteriors.co.uk/assets/welcome.webp">
+
+
 
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/hero.css">
@@ -34,6 +50,8 @@
   <link rel="stylesheet" href="/css/journey.css">
   <link rel="stylesheet" href="/css/contact.css">
 
+  <link rel="preload" as="image" href="/assets/q1.webp" fetchpriority="high">
+
   <!-- Font Awesome kit -->
   <link rel="stylesheet" href="icons/css/fontawesome.min.css">
   <link rel="stylesheet" href="icons/css/solid.min.css">
@@ -41,6 +59,27 @@
 
   <link rel="preload" href="icons/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="icons/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "New Era Interiors",
+  "url": "https://www.newerainteriors.co.uk",
+  "telephone": "+447940757344",
+  "areaServed": "London",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "sameAs": [
+    "https://www.instagram.com/newerabedrooms",
+    "https://www.facebook.com/profile.php?id=100063654859699",
+    "https://www.tiktok.com/@new_era_interiors"
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -50,7 +89,7 @@
 
       <div class="header-left">
         <div class="header-logo-box">
-          <img src="/assets/logo1.webp">
+          <img src="/assets/logo1.webp" width="2061" height="694" alt="New Era Interiors logo" fetchpriority="high">
         </div>
         <!-- <span class="header-brand">New Era Interiors</span> -->
       </div>
@@ -70,9 +109,9 @@
 
       <section class="intro">
 
-        <img src="/assets/logo1.webp">
+        <img src="/assets/logo1.webp" >
 
-        <h4 id="her0-sub-title">Modern Interior Solutions Designed <br>for Inspired Living</h4>
+        <p id="her0-sub-title">Modern Interior Solutions Designed <br>for Inspired Living</p>
 
         <div id="banner">
           <h3 id="banner-head">Presented by</h3>
@@ -124,11 +163,12 @@
             your home</p>
         </div>
         <div id="silhoutte">
-          <img src="/assets/b.webp">
+          <img src="/assets/b.webp" alt="Minimal interior silhouette representing modern home design" loading="lazy"
+            decoding="async">
         </div>
       </div>
       <div class="welcome-main-img">
-        <img src="/assets/welcome.webp">
+        <img src="/assets/welcome.webp" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -139,22 +179,24 @@
         <div id="w-down-banner">
 
           <div class="w-down-points">
-            <img src="/assets/kitchen.webp">
+            <img src="/assets/kitchen.webp" alt="Bespoke kitchen design" loading="lazy" decoding="async">
             <h4>Efficient Modular Kitchens Designed Well</h4>
           </div>
           <div class="w-down-points">
-            <img src="/assets/hotel.webp">
+            <img src="/assets/hotel.webp" alt="Bespoke bedroom design" loading="lazy" decoding="async">
             <h4>Functional & Comfortable Bedrooms</h4>
           </div>
           <div class="w-down-points">
-            <img src="/assets/wardrobe.webp">
+            <img src="/assets/wardrobe.webp" alt="Bespoke wardrobe design" loading="lazy" decoding="async">
             <h4>Custom Wardrobes With Strong Storage</h4>
           </div>
 
         </div>
         <div class="welcome-image">
-          <img src="/assets/welcome-grid-A.webp">
-          <img src="/assets/welcome-grid-B.webp">
+          <img src="/assets/welcome-grid-A.webp" alt="Bespoke interior project by New Era Interiors" loading="lazy"
+            decoding="async">
+          <img src="/assets/welcome-grid-B.webp" alt="Bespoke interior project by New Era Interiors" loading="lazy"
+            decoding="async">
         </div>
       </div>
       <div class="w-down-para">
@@ -175,7 +217,7 @@
           design and long-lasting performance.</p>
       </div>
       <div class="portfolio-image">
-        <img src="/assets/e.webp">
+        <img src="/assets/e.webp" alt="Bespoke interior project by New Era Interiors" loading="lazy" decoding="async">
       </div>
 
     </div>
@@ -187,15 +229,24 @@
       </button>
 
       <div class="slider-track">
-        <div class="slide"><img src="/assets/slider-1.webp"></div>
-        <div class="slide"><img src="/assets/slider-2.webp"></div>
-        <div class="slide"><img src="/assets/slider-3.webp"></div>
-        <div class="slide"><img src="/assets/slider-4.webp"></div>
-        <div class="slide"><img src="/assets/slider-5.webp"></div>
-        <div class="slide"><img src="/assets/slider-6.webp"></div>
-        <div class="slide"><img src="/assets/slider-7.webp"></div>
-        <div class="slide"><img src="/assets/slider-8.webp"></div>
-        <div class="slide"><img src="/assets/slider-9.webp"></div>
+        <div class="slide"><img src="/assets/slider-1.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-2.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-3.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-4.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-5.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-6.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-7.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-8.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
+        <div class="slide"><img src="/assets/slider-9.webp" loading="lazy" decoding="async"
+            alt="Bespoke interior project by New Era Interiors"></div>
       </div>
 
       <button class="slider-btn next" aria-label="Next slide">
@@ -290,7 +341,7 @@
         <div class="contact-socials">
           <span>Follow us</span>
           <div class="contact-social-icons">
-            <a href="https://www.instagram.com/newerabedrooms?igsh=cXdwOXdibXlhODIz" target="_blank">
+            <a href="https://www.instagram.com/newerabedrooms?igsh=cXdwOXdibXlhODIz" aria-label="Instagram" target="_blank">
               <i class="fa-brands fa-instagram"></i>
             </a>
             <a href="https://www.facebook.com/profile.php?id=100063654859699" target="_blank">
@@ -310,8 +361,9 @@
     <p>© <span id="current-year"></span> New Era Interiors. All rights reserved.</p>
   </div>
 
-  <script src="/javascript/script.js"></script>
-  <script type="module" src="/src/main.jsx"></script>
+  <script src="/javascript/script.js" defer></script>
+  <script type="module" src="/src/main.jsx" defer></script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
